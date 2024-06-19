@@ -1,0 +1,74 @@
+CREATE TABLE livros (
+    ISBN SERIAL PRIMARY KEY,
+    quantidade INT,
+    titulo TEXT,
+    autor TEXT,
+    categoria TEXT,
+    disponibilidade TEXT,
+    duracao TEXT
+);
+
+INSERT INTO livros (ISBN, quantidade, titulo, autor, categoria, disponibilidade, duracao)
+VALUES
+    (1052, 6, 'A Cabana', 'William P. Young', 'Ficção Religiosa', 'Disponível', '7'),
+    (1053, 4, 'A Menina que Roubava Livros', 'Markus Zusak', 'Ficção Histórica', 'Disponível', '14'),
+    (1054, 3, 'O Lobo de Wall Street', 'Jordan Belfort', 'Autobiografia', 'Disponível', '30'),
+    (1055, 8, 'A Sombra do Vento', 'Carlos Ruiz Zafón', 'Ficção Gótica', 'Disponível', '7'),
+    (1056, 9, 'O Código Da Vinci', 'Dan Brown', 'Mistério', 'Disponível', '4'),
+    (1057, 5, 'A Culpa é das Estrelas', 'John Green', 'Romance', 'Disponível', '7'),
+    (1058, 7, 'O Menino do Pijama Listrado', 'John Boyne', 'Ficção Histórica', 'Disponível', '14'),
+    (1059, 2, 'O Guia do Mochileiro das Galáxias', 'Douglas Adams', 'Ficção Científica', 'Disponível', '30'),
+    (1060, 6, 'As Crônicas de Gelo e Fogo: A Guerra dos Tronos', 'George R.R. Martin', 'Fantasia Épica', 'Disponível', '7'),
+    (1061, 10, 'O Nome do Vento', 'Patrick Rothfuss', 'Fantasia', 'Disponível', '4'),
+    (1062, 8, 'O Iluminado', 'Stephen King', 'Horror', 'Disponível', '7'),
+    (1063, 3, 'A Revolta de Atlas', 'Ayn Rand', 'Filosofia', 'Disponível', '14'),
+    (1064, 5, 'O Morro dos Ventos Uivantes', 'Emily Brontë', 'Romance Gótico', 'Disponível', '30'),
+    (1065, 7, '1984', 'George Orwell', 'Ficção Distópica', 'Disponível', '7'),
+    (1066, 9, 'A Arte da Guerra', 'Sun Tzu', 'Filosofia Militar', 'Disponível', '4'),
+    (1067, 6, 'A Revolução dos Bichos', 'George Orwell', 'Sátira Política', 'Disponível', '7'),
+    (1068, 4, 'Maus: A História de Um Sobrevivente', 'Art Spiegelman', 'Memórias', 'Disponível', '14'),
+    (1069, 8, 'O Poder do Hábito', 'Charles Duhigg', 'Autoajuda', 'Disponível', '30'),
+    (1070, 2, 'Sapiens: Uma Breve História da Humanidade', 'Yuval Noah Harari', 'História', 'Disponível', '7'),
+    (1071, 5, 'O Médico e o Monstro', 'Robert Louis Stevenson', 'Ficção Gótica', 'Disponível', '4'),
+    (1072, 7, 'O Ladrão de Raios', 'Rick Riordan', 'Fantasia', 'Disponível', '7'),
+    (1073, 9, 'O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 'Fábula', 'Disponível', '14'),
+    (1074, 3, 'A Metamorfose', 'Franz Kafka', 'Ficção Absurda', 'Disponível', '30'),
+    (1075, 6, 'As Vantagens de Ser Invisível', 'Stephen Chbosky', 'Ficção Adolescente', 'Disponível', '7');
+
+	select * from livros;
+
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    funcao VARCHAR(50) NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    codigo_aluno INTEGER
+);
+
+INSERT INTO usuarios (funcao, username, senha, nome, codigo_aluno) VALUES 
+('administrador', 'admin1', 'senha123', 'Admin One', NULL),
+('administrador', 'admin2', 'senha123', 'Admin Two', NULL),
+('administrador', 'admin3', 'senha123', 'Admin Three', NULL),
+('aluno', 'aluno1', 'senha123', 'Aluno Um', 101),
+('aluno', 'aluno2', 'senha123', 'Aluno Dois', 102),
+('aluno', 'aluno3', 'senha123', 'Aluno Três', 103),
+('aluno', 'aluno4', 'senha123', 'Aluno Quatro', 104),
+('aluno', 'aluno5', 'senha123', 'Aluno Cinco', 105),
+('aluno', 'aluno6', 'senha123', 'Aluno Seis', 106),
+('aluno', 'aluno7', 'senha123', 'Aluno Sete', 107),
+('aluno', 'aluno8', 'senha123', 'Aluno Oito', 108),
+('aluno', 'aluno9', 'senha123', 'Aluno Nove', 109),
+('aluno', 'aluno10', 'senha123', 'Aluno Dez', 110),
+('aluno', 'aluno11', 'senha123', 'Aluno Onze', 111),
+('aluno', 'aluno12', 'senha123', 'Aluno Doze', 112),
+('aluno', 'aluno13', 'senha123', 'Aluno Treze', 113),
+('aluno', 'aluno14', 'senha123', 'Aluno Quatorze', 114),
+('aluno', 'aluno15', 'senha123', 'Aluno Quinze', 115),
+('aluno', 'aluno16', 'senha123', 'Aluno Dezesseis', 116),
+('aluno', 'aluno17', 'senha123', 'Aluno Dezessete', 117);
+
+select * from usuarios;
+select * from livros;
+select * from usuarios where id = 1 order by id;
+select * from usuarios where nome ilike 'Admin' order by id;
